@@ -16,7 +16,7 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-  TwitterIcon,
+  InstagramIcon,
   GithubIcon,
   DiscordIcon,
   HeartFilledIcon,
@@ -31,7 +31,7 @@ export const Navbar = () => {
             <span className="bg-gradient-to-b from-orange-400 via-orange-500 to-amber-600 bg-clip-text text-transparent">
               KRAAL
             </span>
-            <span className="text-white"> HOTEL</span>
+            <span className="text-white">&nbsp;HOTEL</span>
           </Link>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -57,8 +57,8 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
+          <Link isExternal aria-label="Instagram" href={siteConfig.links.instagram}>
+            <InstagramIcon className="text-default-500" />
           </Link>
           <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
             <DiscordIcon className="text-default-500" />
@@ -77,7 +77,7 @@ export const Navbar = () => {
             startContent={<HeartFilledIcon className="text-danger" />}
             variant="flat"
           >
-            Sponsor
+            Talk to us
           </Button>
         </NavbarItem>
       </NavbarContent>
