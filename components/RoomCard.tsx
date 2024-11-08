@@ -1,5 +1,7 @@
 import React from "react";
-
+import { FaWifi, FaBed, FaCoffee } from "react-icons/fa";
+import { MdRoomService, MdLiving, MdOutlineLiving } from "react-icons/md";
+import { FaKitchenSet } from "react-icons/fa6";
 interface RoomCardProps {
     image: string;
     title: string;
@@ -25,9 +27,19 @@ const RoomCard: React.FC<RoomCardProps> = ({
             <div className="p-4 flex-grow">
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
                 <p className="text-gray-200">{price}</p>
-                <ul className="text-sm text-gray-300">
+                <ul className="text-sm text-gray-300 flex flex-col">
                     {amenities.map((amenity, index) => (
-                        <li key={index}>• {amenity}</li>
+                        <li key={index} className="flex items-center">
+                            {amenity === "Free WiFi" && <FaWifi className="mr-2" />}
+                            {amenity === "King Bed" && <FaBed className="mr-2" />}
+                            {amenity === "Queen Bed" && <FaBed className="mr-2" />}
+                            {amenity === "Breakfast Included" && <FaCoffee className="mr-2" />}
+                            {amenity === "Room Service" && <MdRoomService className="mr-2" />}
+                            {amenity === "Living Area" && <MdOutlineLiving className="mr-2" />}
+                            {amenity === "Two Queen Beds" && <FaBed className="mr-2" />}
+                            {amenity === "Kitchenette" && <FaKitchenSet className="mr-2" />}
+                            {amenity}
+                        </li>
                     ))}
                 </ul>
                 <p className="text-gray-200 mt-2">{description}</p>
